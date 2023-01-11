@@ -12,32 +12,37 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 3. assegno un numero alle celle;
 4. coloro di azzurro la casella cliccata;
 5. stampo in console il numero che è stato cliccato.
+6. inserisco tutto all'interno di una funzione (nuoveCelle) che poi invoco all'inizio.
 */
 
 const bottone = document.querySelector(".btn");
 const gliglia = document.querySelector(".griglia");
 
-// creo le celle con classe cella all'interno della griglia;
-for (let i = 1; i <= 100; i++) {
-  console.log(i);
-  let div = document.createElement("div");
+const celle = nuoveCelle();
 
-  // assegno un numero alle celle;
-  div.innerHTML += i;
-  div.classList.add("cella");
-  gliglia.append(div);
+function nuoveCelle() {
+  // creo le celle con classe cella all'interno della griglia;
+  for (let i = 1; i <= 100; i++) {
+    console.log(i);
+    let div = document.createElement("div");
 
-  // coloro di azzurro la casella cliccata;
-  div.addEventListener("click", function () {
-    if (this.classList.contains("cellaCliccata")) {
-      this.classList.remove("cellaCliccata");
-    } else {
-      this.classList.add("cellaCliccata");
-    }
+    // assegno un numero alle celle;
+    div.innerHTML += i;
+    div.classList.add("cella");
+    gliglia.append(div);
 
-    // stampo in console il numero che è stato cliccato.
-    console.log("Cella cliccata numero:", i);
-  });
+    // coloro di azzurro la casella cliccata;
+    div.addEventListener("click", function () {
+      if (this.classList.contains("cellaCliccata")) {
+        this.classList.remove("cellaCliccata");
+      } else {
+        this.classList.add("cellaCliccata");
+      }
+
+      // stampo in console il numero che è stato cliccato.
+      console.log("Cella cliccata numero:", i);
+    });
+  }
 }
 
 // al click del bottone "play" rendo visibile la griglia;
