@@ -88,9 +88,15 @@ const livelli = document.getElementById("levels");
 bottone.addEventListener("click", function () {
   if (livelli.value == "e") {
     grigliaUno.classList.remove("hidden");
+    grigliaDue.classList.add("hidden");
+    grigliaTre.classList.add("hidden");
   } else if (livelli.value == "m") {
     grigliaDue.classList.remove("hidden");
+    grigliaUno.classList.add("hidden");
+    grigliaTre.classList.add("hidden");
   } else if (livelli.value == "h") {
     grigliaTre.classList.remove("hidden");
+    grigliaUno.classList.add("hidden");
+    grigliaDue.classList.add("hidden");
   }
 });
