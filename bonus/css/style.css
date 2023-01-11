@@ -121,3 +121,21 @@ footer {
 .dati {
   line-height: 50px;
 }
+
+@media only screen and (max-width: 425px) {
+  h1 {
+    font-size: 19px;
+  }
+
+  .btn {
+    margin-left: 0px;
+  }
+
+  .sceltaLivello {
+    text-align: right;
+  }
+
+  #levels {
+    padding-right: 0px;
+  }
+}
