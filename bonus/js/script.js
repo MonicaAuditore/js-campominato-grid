@@ -16,11 +16,15 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 Bonus:
 6. aggiungo la select in html;
 7. in css creo altre due classi per cella-medium e cella-hard;
-8. 
+8. creo le altre due griglie;
+9. al click, in base alla difficoltà scelta, mostro una griglia diversa;
 */
 
 const bottone = document.querySelector(".btn");
-const gliglia = document.querySelector(".griglia");
+// const gliglia = document.querySelector(".griglia");
+const grigliaUno = document.getElementById("grigliaUno");
+const grigliaDue = document.getElementById("grigliaDue");
+const grigliaTre = document.getElementById("grigliaTre");
 
 // creo le celle con classe cella all'interno della griglia;
 for (let i = 1; i <= 100; i++) {
@@ -30,7 +34,45 @@ for (let i = 1; i <= 100; i++) {
   // assegno un numero alle celle;
   div.innerHTML += i;
   div.classList.add("cella");
-  gliglia.append(div);
+  grigliaUno.append(div);
+
+  // coloro di azzurro la casella cliccata;
+  div.addEventListener("click", function () {
+    div.classList.add("cellaCliccata");
+    // stampo in console il numero che è stato cliccato.
+    console.log("Cella cliccata numero:", i);
+  });
+}
+
+// creo GRIGLIA 2;
+// creo le celle con classe cella all'interno della griglia;
+for (let i = 1; i <= 81; i++) {
+  console.log(i);
+  let div = document.createElement("div");
+
+  // assegno un numero alle celle;
+  div.innerHTML += i;
+  div.classList.add("cella-medium");
+  grigliaDue.append(div);
+
+  // coloro di azzurro la casella cliccata;
+  div.addEventListener("click", function () {
+    div.classList.add("cellaCliccata");
+    // stampo in console il numero che è stato cliccato.
+    console.log("Cella cliccata numero:", i);
+  });
+}
+
+// creo GRIGLIA 3;
+// creo le celle con classe cella all'interno della griglia;
+for (let i = 1; i <= 49; i++) {
+  console.log(i);
+  let div = document.createElement("div");
+
+  // assegno un numero alle celle;
+  div.innerHTML += i;
+  div.classList.add("cella-hard");
+  grigliaTre.append(div);
 
   // coloro di azzurro la casella cliccata;
   div.addEventListener("click", function () {
@@ -42,9 +84,13 @@ for (let i = 1; i <= 100; i++) {
 
 const livelli = document.getElementById("levels");
 
-// al click del bottone "play" rendo visibile la griglia;
+// al click del bottone "play" mostro la griglia in base alla scelta della difficoltà;
 bottone.addEventListener("click", function () {
   if (livelli.value == "e") {
-    gliglia.classList.remove("hidden");
+    grigliaUno.classList.remove("hidden");
+  } else if (livelli.value == "m") {
+    grigliaDue.classList.remove("hidden");
+  } else if (livelli.value == "h") {
+    grigliaTre.classList.remove("hidden");
   }
 });
