@@ -11,3 +11,22 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
+
+/*
+1. creo le celle con classe cella all'interno della griglia;
+2. al click del bottone "play" rendo visibile la griglia;
+*/
+
+const bottone = document.querySelector(".btn");
+const gliglia = document.querySelector(".griglia");
+
+for (let i = 1; i <= 100; i++) {
+  console.log(i);
+  let div = document.createElement("div");
+  div.classList.add("cella");
+  gliglia.append(div);
+}
+
+bottone.addEventListener("click", function () {
+  gliglia.classList.remove("hidden");
+});

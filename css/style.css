@@ -45,11 +45,15 @@ main {
 }
 
 .griglia {
-  width: 50vh;
-  height: 50vh;
+  width: 72vh;
+  height: 72vh;
   background-color: rgb(247, 81, 144);
   display: flex;
   flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
 }
 
 .cella {
