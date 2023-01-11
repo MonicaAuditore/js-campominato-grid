@@ -27,6 +27,11 @@ for (let i = 1; i <= 100; i++) {
   div.innerHTML += i;
   div.classList.add("cella");
   gliglia.append(div);
+
+  div.addEventListener("click", function () {
+    div.classList.add("cellaCliccata");
+    console.log("Cella cliccata numero:", i);
+  });
 }
 
 bottone.addEventListener("click", function () {
