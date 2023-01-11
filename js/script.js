@@ -29,7 +29,12 @@ for (let i = 1; i <= 100; i++) {
 
   // coloro di azzurro la casella cliccata;
   div.addEventListener("click", function () {
-    div.classList.add("cellaCliccata");
+    if (this.classList.contains("cellaCliccata")) {
+      this.classList.remove("cellaCliccata");
+    } else {
+      this.classList.add("cellaCliccata");
+    }
+
     // stampo in console il numero che è stato cliccato.
     console.log("Cella cliccata numero:", i);
   });
