@@ -122,9 +122,9 @@ footer {
   line-height: 50px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 689px) {
   h1 {
-    font-size: 19px;
+    font-size: 25px;
   }
 
   .btn {
@@ -137,5 +137,11 @@ footer {
 
   #levels {
     padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  h1 {
+    font-size: 19px;
   }
 }
