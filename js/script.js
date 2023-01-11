@@ -15,6 +15,7 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 /*
 1. creo le celle con classe cella all'interno della griglia;
 2. al click del bottone "play" rendo visibile la griglia;
+3. assegno un numero alle celle;
 */
 
 const bottone = document.querySelector(".btn");
@@ -23,6 +24,7 @@ const gliglia = document.querySelector(".griglia");
 for (let i = 1; i <= 100; i++) {
   console.log(i);
   let div = document.createElement("div");
+  div.innerHTML += i;
   div.classList.add("cella");
   gliglia.append(div);
 }
